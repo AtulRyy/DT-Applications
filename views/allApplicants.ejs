@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Applicants</title>
+    <link rel="stylesheet" href="/styles/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"
+    />
+    <!-- Optional: DataTables Bootstrap CSS for Bootstrap styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css"
+    />
+    <style>
+       
+    </style>
+  </head>
+  <body class="">
+    <h1 class="mt-16 text-center text-5xl font-bold">All Applicants</h1>
+    <div class="allAppContainer w-full flex justify-center items-center">
+      <div class="p-10 w-[75%] my-16 border-2 border-black rounded-xl">
+        <table id="dataTable">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Semester</th>
+              <th>Branch</th>
+              <th>USN</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% data.forEach(function(item) { %>
+            <tr
+              class="items clickable-row hover:bg-[#810d816d] transition-all ease-in duration-75 cursor-pointer"
+              data-href="applicant/<%= item.SRN %>"
+            >
+              <td><%= item.firstName+" "+item.lastName %></td>
+              <td><%= item.semester %></td>
+              <td><%= item.branch %></td>
+              <td><%= item.SRN %></td>
+              
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <!-- Optional: DataTables Bootstrap JS -->
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#dataTable").DataTable();
+
+        // Adding a custom search input
+        $("#searchInput").on("keyup", function () {
+          $("#dataTable").DataTable().search(this.value).draw();
+        });
+      });
+
+
+      $('.clickable-row').on('click', function() {
+                window.location = $(this).data('href');
+            });
+    </script>
+  </body>
+</html>

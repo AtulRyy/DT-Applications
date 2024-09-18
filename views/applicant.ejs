@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=applicant.firstName+" "+applicant.lastName%></title>
+    <link rel="stylesheet" href="/styles/output.css">
+</head>
+<body>
+    <div class="wrapper w-full flex justify-center items-center">
+        <div class="inner w-[75%] my-20 border-2 border-black rounded-xl p-10">
+            <div class="container mx-auto p-8">
+                <h1 class="text-3xl font-bold mb-6">User Profile</h1>
+        
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-semibold mb-4"><%= applicant.firstName %> <%= applicant.lastName %></h2>
+                    
+                    <div class="mb-4">
+                        <h3 class="text-xl font-medium">Contact Information</h3>
+                        <p class="mt-2"><strong>Email:</strong> <%= applicant.email %></p>
+                        <p><strong>Phone:</strong> <%= applicant.phone %></p>
+                    </div>
+        
+                    <div class="mb-4">
+                        <h3 class="text-xl font-medium">Academic Information</h3>
+                        <p class="mt-2"><strong>Semester:</strong> <%= applicant.semester %></p>
+                        <p><strong>Branch:</strong> <%= applicant.branch %></p>
+                        <p><strong>SRN:</strong> <%= applicant.SRN %></p>
+                    </div>
+        
+                    <div class="mb-4">
+                        <h3 class="text-xl font-medium">About</h3>
+                        <p class="mt-2"><%= applicant.aboutYourself %></p>
+                    </div>
+        
+                    <div class="mb-4">
+                        <h3 class="text-xl font-medium">Coding Adventures</h3>
+                        <p class="mt-2"><%= applicant.codingAdventures %></p>
+                    </div>
+        
+                    <div class="mb-4">
+                        <h3 class="text-xl font-medium">Links</h3>
+                        <p class="mt-2"><a href="<%= applicant.github %>" class="text-blue-500 underline">GitHub</a></p>
+                        <p><a href="<%= applicant.linkedin %>" class="text-blue-500 underline">LinkedIn</a></p>
+                        <p><a href="<%= applicant.resume %>" class="text-blue-500 underline">Resume</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
