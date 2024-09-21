@@ -1,52 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%=applicant.firstName+" "+applicant.lastName%></title>
-    <link rel="stylesheet" href="/styles/output.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/styles/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <div class="wrapper w-full flex justify-center items-center bg-black">
-        <div class="inner w-[75%] my-20 border-2 border-white text-white rounded-xl p-10">
-            <div class="container mx-auto p-8">
-                <h1 class="text-3xl font-bold mb-6">User Profile</h1>
-        
-                <div class="bg-black p-6 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-semibold mb-4"><%= applicant.firstName %> <%= applicant.lastName %></h2>
-                    
-                    <div class="mb-4">
-                        <h3 class="text-xl font-medium">Contact Information</h3>
-                        <p class="mt-2"><strong>Email:</strong> <%= applicant.email %></p>
-                        <p><strong>Phone:</strong> <%= applicant.phone %></p>
-                    </div>
-        
-                    <div class="mb-4">
-                        <h3 class="text-xl font-medium">Academic Information</h3>
-                        <p class="mt-2"><strong>Semester:</strong> <%= applicant.semester %></p>
-                        <p><strong>Branch:</strong> <%= applicant.branch %></p>
-                        <p><strong>SRN:</strong> <%= applicant.SRN %></p>
-                    </div>
-        
-                    <div class="mb-4">
-                        <h3 class="text-xl font-medium">About</h3>
-                        <p class="mt-2"><%= applicant.aboutYourself %></p>
-                    </div>
-        
-                    <div class="mb-4">
-                        <h3 class="text-xl font-medium">Coding Adventures</h3>
-                        <p class="mt-2"><%= applicant.codingAdventures %></p>
-                    </div>
-        
-                    <div class="mb-4">
-                        <h3 class="text-xl font-medium">Links</h3>
-                        <p class="mt-2"><a href="<%= applicant.github %>" class="text-blue-500 underline">GitHub</a></p>
-                        <p><a href="<%= applicant.linkedin %>" class="text-blue-500 underline">LinkedIn</a></p>
-                        <p><a href="<%= applicant.resume %>" class="text-blue-500 underline">Resume</a></p>
-                    </div>
-                </div>
+      <div
+        class="inner w-full lg:w-[75%] my-20 border-2 border-white text-white relative rounded-xl p-5 lg:p-10"
+      >
+        <a href="/"
+          class="border-white border-2 rounded-full flex justify-center items-center absolute top-1 -left-32 size-14 hover:bg-purple-700 text-white transition-all ease-in-out duration-200 cursor-pointer"
+        >
+          <i
+            class="fa fa-arrow-left text-white text-4xl "
+            aria-hidden="true"
+          ></i>
+    </a>
+        <div class="container mx-auto lg:p-8">
+          <h1 class="text-3xl font-bold mb-6">Applicant</h1>
+
+          <div class="bg-black p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4">
+              <%= applicant.firstName %> <%= applicant.lastName %>
+            </h2>
+
+            <div class="mb-4">
+              <h3 class="text-xl font-medium">Contact Information</h3>
+              <p class="mt-2"><strong>Email:</strong> <%= applicant.email %></p>
+              <p><strong>Phone:</strong> <%= applicant.phone %></p>
             </div>
+
+            <div class="mb-4">
+              <h3 class="text-xl font-medium">Academic Information</h3>
+              <p class="mt-2">
+                <strong>Semester:</strong> <%= applicant.semester %>
+              </p>
+              <p><strong>Branch:</strong> <%= applicant.branch %></p>
+              <p><strong>SRN:</strong> <%= applicant.SRN %></p>
+            </div>
+
+            <div class="mb-4">
+              <h3 class="text-xl font-medium">About</h3>
+              <p class="mt-2"><%= applicant.aboutYourself %></p>
+            </div>
+
+            <div class="mb-4">
+              <h3 class="text-xl font-medium">Coding Adventures</h3>
+              <p class="mt-2"><%= applicant.codingAdventures %></p>
+            </div>
+
+            <div class="mb-4">
+              <h3 class="text-xl font-medium">Links</h3>
+              <p class="mt-2">
+                <a
+                  href="<%= applicant.github %>"
+                  class="text-blue-500 underline"
+                  >GitHub</a
+                >
+              </p>
+              <p>
+                <a
+                  href="<%= applicant.linkedin %>"
+                  class="text-blue-500 underline"
+                  >LinkedIn</a
+                >
+              </p>
+              <p>
+                <a
+                  href="<%= applicant.resume %>"
+                  class="text-blue-500 underline"
+                  >Resume</a
+                >
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
