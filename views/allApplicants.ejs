@@ -14,14 +14,12 @@
       rel="stylesheet"
       href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css"
     />
-    <style>
-       
-    </style>
+    
   </head>
-  <body class="">
+  <body class="bg-black text-white">
     <h1 class="mt-16 text-center text-5xl font-bold">All Applicants</h1>
-    <div class="allAppContainer w-full flex justify-center items-center">
-      <div class="p-10 w-[75%] my-16 border-2 border-black rounded-xl">
+    <div class="allAppContainer w-full flex justify-center items-center text-black">
+      <div class="p-10 w-[75%] my-16 border-2 border-purple-600 rounded-xl bg-[#ffffffa5] overflow-x-scroll lg:overflow-hidden">
         <table id="dataTable">
           <thead>
             <tr>
@@ -57,7 +55,9 @@
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
     <script>
       $(document).ready(function () {
-        $("#dataTable").DataTable();
+        $("#dataTable").DataTable({
+          
+        });
 
         // Adding a custom search input
         $("#searchInput").on("keyup", function () {
