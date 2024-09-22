@@ -14,12 +14,15 @@
       rel="stylesheet"
       href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css"
     />
-    
   </head>
   <body class="bg-black text-white">
     <h1 class="mt-16 text-center text-5xl font-bold">All Applicants</h1>
-    <div class="allAppContainer w-full flex justify-center items-center text-black">
-      <div class="p-10 w-full lg:w-[75%] my-16 border-2 border-purple-600 rounded-xl bg-[#dddcdc] overflow-x-scroll lg:overflow-hidden">
+    <div
+      class="allAppContainer w-full flex justify-center items-center text-black"
+    >
+      <div
+        class="p-10 w-full lg:w-[75%] my-16 border-2 border-purple-600 rounded-xl bg-[#dddcdc] overflow-x-scroll lg:overflow-hidden"
+      >
         <table id="dataTable">
           <thead>
             <tr>
@@ -40,24 +43,38 @@
               <td><%= item.semester %></td>
               <td><%= item.branch %></td>
               <td><%= item.SRN %></td>
-              
             </tr>
             <% }); %>
           </tbody>
         </table>
       </div>
     </div>
+    <div class="b hidden h-screen w-screen bg-black z-40 fixed top-0">
+      <img src="/trolling.gif" class="w-full h-full object-fill" alt="" />
+      
+    </div>
+
+    <a class="gift-box cursor-pointer" onclick="troll()"
+      ><img
+        src="/troll.png"
+        alt=""
+        class="absolute bottom-5 right-5 size-24 hover:bottom-7 transition-all ease-in-out duration-500"
+    /></a>
+
+    <audio  id="music">
+      <source src="/careless_whispers.mp3" type="audio/mp3">
+      </audio>
     <!-- jQuery library -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- DataTables JS -->
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <!-- Optional: DataTables Bootstrap JS -->
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
+
     <script>
       $(document).ready(function () {
-        $("#dataTable").DataTable({
-          
-        });
+        $("#dataTable").DataTable({});
 
         // Adding a custom search input
         $("#searchInput").on("keyup", function () {
@@ -65,10 +82,16 @@
         });
       });
 
+      $(".clickable-row").on("click", function () {
+        window.location = $(this).data("href");
+      });
+    </script>
 
-      $('.clickable-row').on('click', function() {
-                window.location = $(this).data('href');
-            });
+    <script>
+      function troll(){
+        document.querySelector(".b").classList.remove("hidden")
+        document.getElementById('music').play()
+      }
     </script>
   </body>
 </html>
