@@ -36,8 +36,8 @@
 
             <div class="mb-4">
               <h3 class="text-xl font-medium">Contact Information</h3>
-              <p class="mt-2"><strong>Email:</strong> <%= applicant.email %></p>
-              <p><strong>Phone:</strong> <%= applicant.phone %></p>
+              <p class="mt-2"><strong>Email:</strong> <div class="click-copy"><%= applicant.email %></div></p>
+              <p><strong>Phone:</strong> <div class="click-copy"><%= applicant.phone %></div></p>
             </div>
 
             <div class="mb-4">
@@ -87,5 +87,16 @@
         </div>
       </div>
     </div>
+    <script>var copyText = document.getElementsByClassName("click-copy");
+
+      // Select the text field
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); // For mobile devices
+    
+       // Copy the text inside the text field
+      navigator.clipboard.writeText(copyText.value);
+    
+      // Alert the copied text
+      alert("Copied the text: " + copyText.value);</script>
   </body>
 </html>
